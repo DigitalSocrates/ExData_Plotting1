@@ -11,7 +11,7 @@ plot2 <- function() {
   # merge data and time 
   powerconsumptionSubset$DateTime <- strptime(paste(powerconsumptionSubset$Date,powerconsumptionSubset$Time,sep=":"),format="%Y-%m-%d:%H:%M:%S")
   # make a plot using time series
-  with(powerconsumptionSubset, plot(powerconsumptionSubset$DateTime,powerconsumptionSubset$Global_active_power,type = "l", xlab = "", ylab = "Global Active Power (kilowatts)"))
+  with(powerconsumptionSubset, plot(powerconsumptionSubset$DateTime,powerconsumptionSubset$Global_active_power,type="l",xlab="",ylab="Global Active Power (kilowatts)"))
   # write 
   dev.off()
 }
