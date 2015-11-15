@@ -12,9 +12,11 @@ plot3 <- function() {
   powerconsumptionSubset$DateTime <- strptime(paste(powerconsumptionSubset$Date,powerconsumptionSubset$Time,sep=":"),format="%Y-%m-%d:%H:%M:%S")
   # make a plot using time series for sub_metering 1
   with(powerconsumptionSubset, plot(powerconsumptionSubset$DateTime,powerconsumptionSubset$Sub_metering_1,type="l",xlab="",ylab="Energy sub metering", col = "black", ylim = c(0,38)))
+  # If set to TRUE, the next high-level plotting command (actually plot.new) should not clean the frame before drawing as if it were on a new device.
   par(new=TRUE)
   # make a plot using time series for sub_metering 2
   with(powerconsumptionSubset, plot(powerconsumptionSubset$DateTime,powerconsumptionSubset$Sub_metering_2,type="l",xlab="",ylab="Energy sub metering", col = "red", ylim = c(0,38)))
+  # If set to TRUE, the next high-level plotting command (actually plot.new) should not clean the frame before drawing as if it were on a new device.
   par(new=TRUE)
   # make a plot using time series for sub_metering 3
   with(powerconsumptionSubset, plot(powerconsumptionSubset$DateTime,powerconsumptionSubset$Sub_metering_3,type="l",xlab="",ylab="Energy sub metering", col = "blue", ylim = c(0,38)))
